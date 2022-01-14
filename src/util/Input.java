@@ -3,11 +3,11 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
-//    public Input() {
-//        this.scanner = new Scanner(System.in);
-//    }
+    public Input() {
+        this.scanner = new Scanner(System.in);
+    }
 
     public String getString() {
         System.out.println("Please enter something");
@@ -117,6 +117,7 @@ public class Input {
         return output;
     }
 
+
     public int getInt() {
         System.out.println("What is the radius of a circle?");
         return scanner.nextInt();
@@ -135,6 +136,21 @@ public class Input {
             }
         } while (loopAgain);
         return output;
+    }
+
+    public long getHex(String prompt) {
+        boolean loopAgain = true;
+        long output =  0;
+        do {
+            try {
+                System.out.printf("%s\n", prompt);
+                output = Integer.valueOf(this.scanner.next(), 16);
+                loopAgain = false;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } while (loopAgain);
+        return  output;
     }
 }
 

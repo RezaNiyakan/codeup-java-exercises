@@ -4,7 +4,7 @@ package util;
      public static void main(String[] args) {
          Input in = new Input();
 
-         String unoReverse = in.getString();
+
 
 
 //         Input input = new Input();
@@ -22,5 +22,7 @@ package util;
          System.out.println(myScanner.getDouble(myScanner.getDouble("Input a min double."), myScanner.getDouble("Input a max double.")));
          System.out.println("End");
 
+         in.getInt();
+//         in.getDouble();
      }
 }
